@@ -12,10 +12,12 @@ describe('Auth Selectors', () => {
   });
 });
 
-function createAuthState() {
+function createAuthState(): any {
   return {
     auth: {
-      isAuthenticated: false
+      isAuthenticated: false,
+      token: '',
+      profile: {}
     },
     router: {} as any
   };

@@ -1,15 +1,16 @@
 import { NotificationService } from './notification.service';
 import { TestBed } from '@angular/core/testing';
-import { NzMessageService } from 'ng-zorro-antd';
+import { NzMessageService } from 'ng-zorro-antd/message';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 describe('NotificationService', () => {
   let service: NotificationService;
 
   beforeEach(() => {
     TestBed.configureTestingModule({
-      providers: [NotificationService, NzMessageService]
+      providers: [NotificationService, NzMessageService, NzNotificationService]
     });
-    service = TestBed.get(NotificationService);
+    service = TestBed.inject(NotificationService);
   });
 
   it('should be created', () => {
