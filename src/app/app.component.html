@@ -1,0 +1,48 @@
+<nz-layout class="full-h">
+  <!-- Header -->
+  <nz-header>
+    <div class="flex between top">
+      <div class="flex start">
+        <div [class]="isCollapsed ? 'collapsed-logo' : 'logo'">
+          <a [routerLink]="['/converter']">
+            <img class="header-icon" [class.header-icon-collapsed]="isCollapsed"
+              src="../../../../assets/images/dollar.png" alt="logo">
+            <h1 nz-typography *ngIf="!isCollapsed" class="text-white font-weight-light">
+              Converter
+            </h1>
+          </a>
+        </div>
+        <div class="ml-2">
+          <!-- <app-env-tag></app-env-tag> -->
+        </div>
+      </div>
+    </div>
+  </nz-header>
+
+  <nz-layout>
+    <!-- Sidebar -->
+    <nz-sider class="scrollable-sidebar" nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px" nzTheme="light">
+      <ul nz-menu nzMode="inline" class="sider-menu" [nzInlineCollapsed]="isCollapsed">
+        <li nz-menu-item nzMatchRouter [routerLink]="['/converter']">
+          <i nz-icon nzType="bank"></i>
+          <span>Converter</span>
+        </li>
+      </ul>
+    </nz-sider>
+
+    <!-- Content -->
+    <nz-layout class="inner-layout">
+      <nz-breadcrumb class="compatable">
+        <nz-breadcrumb-item *ngFor="let item of pageList; let i = index">
+          <a [routerLink]="[getLinkByIndex(i)]">
+            <i nz-icon [nzType]="matchNameWithIcons(item)"></i>
+            <span *ngIf="item != 'home'">{{item | titlecase}}</span>
+          </a>
+        </nz-breadcrumb-item>
+      </nz-breadcrumb>
+      <nz-content>
+        <router-outlet></router-outlet>
+      </nz-content>
+    </nz-layout>
+  </nz-layout>
+</nz-layout>

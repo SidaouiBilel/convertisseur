@@ -1,0 +1,14 @@
+:host {
+  height: 100%;
+  display: flex;
+  flex-flow: column;
+  background-color: white;
+}
+
+.conv-form {
+  width: 50%;
+}
+
+.selected {
+  border-color: #6fd7ff !important;
+}

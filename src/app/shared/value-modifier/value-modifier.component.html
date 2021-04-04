@@ -1,0 +1,23 @@
+<button nz-button nz-tooltip [nzTooltipTitle]='tooltip' nz-popover nzPopoverTrigger="click" nzPopoverPlacement="bottom"
+  [nzPopoverTitle]="titleTemplate" [nzPopoverContent]="contentTemplate" [(nzPopoverVisible)]="visible">
+  <i nz-icon [nzType]="icon" nzTheme="outline"></i>
+</button>
+
+<ng-template #titleTemplate>{{title}}</ng-template>
+<ng-template #contentTemplate>
+  <form nz-form [formGroup]="form" class="form" (ngSubmit)="onSave()">
+    <nz-form-item style="margin-bottom: 6px;">
+      <nz-form-control nzErrorTip="The input is not valid.">
+        <nz-input-group nzPrefixIcon="user">
+          <input type="number" nz-input formControlName="value" placeholder="Please Enter a value" />
+        </nz-input-group>
+      </nz-form-control>
+    </nz-form-item>
+    <nz-form-item style="margin-bottom: 6px;">
+      <div class="flex between w-100">
+        <button nz-button nzSize="small" nzType="primary" (ngSubmit)="onSave()">Ok</button>
+        <button nz-button nzSize="small" nzType="default" (click)="visible = false">Cancel</button>
+      </div>
+    </nz-form-item>
+  </form>
+</ng-template>
