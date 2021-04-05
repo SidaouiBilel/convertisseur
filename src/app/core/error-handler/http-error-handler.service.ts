@@ -4,13 +4,14 @@ import { Observable, throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { InterceptedHttpError } from './intercepted-error.model';
 import { NotificationService } from '../notifications/notification.service';
+import { NzNotificationService } from 'ng-zorro-antd/notification';
 
 /** Application-wide error handler that adds a UI notification to the error handling
  * provided by the default Angular ErrorHandler.
  */
 @Injectable()
 export class HttpErrorHandler implements HttpInterceptor {
-  constructor(public injector: Injector, private a: NotificationService) {
+  constructor(public injector: Injector) {
   }
 
   intercept(req: HttpRequest<any>, next: HttpHandler): Observable<HttpEvent<any>> {
@@ -34,8 +35,7 @@ export class HttpErrorHandler implements HttpInterceptor {
         } catch (error) {
           displayMessage = 'Error Handeling Error';
         }
-        this.a.error(displayMessage);
-        // this.injector.get(NzNotificationService)[func](title, displayMessage, {nzDuration: 3000, nzAnimate: true});
+        this.injector.get(NzNotificationService)[func](title, displayMessage, {nzDuration: 3000, nzAnimate: true});
         return throwError(new InterceptedHttpError());
       })
     )
