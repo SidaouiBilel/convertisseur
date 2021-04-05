@@ -13,8 +13,8 @@ import { selectFixedRatio, selectRatio, selectType } from './../store/converter.
   styleUrls: ['./converter.component.scss']
 })
 export class ConverterComponent implements OnInit {
-  ammountinEuro: number;
-  ammountinDollar: number;
+  amountinEuro: number;
+  amountinDollar: number;
   type: 'EuroToDollar' | 'DollarToEuro';
   // Check if value is modifed
   isModified = false;
@@ -39,22 +39,22 @@ export class ConverterComponent implements OnInit {
       case 'EuroToDollar':
         if (this.eur$) {this.eur$.unsubscribe(); }
         this.usd$ = combineLatest([this.ratio$, this.fixedRatio$]).subscribe(([live, fixed]: [number, number]) => {
-          if (this.ammountinEuro) {
+          if (this.amountinEuro) {
             const ratio: Ratio = getUsedRatio(live, fixed);
-            this.ammountinDollar = Number((this.ammountinEuro * ratio.used).toFixed(4));
+            this.amountinDollar = Number((this.amountinEuro * ratio.used).toFixed(4));
             this.isModified = false;
-            this.addToHistory('Euro', 'Dollar', this.ammountinEuro, this.ammountinDollar, ratio.live, ratio.fixed, ratio.used);
+            this.addToHistory('Euro', 'Dollar', this.amountinEuro, this.amountinDollar, ratio.live, ratio.fixed, ratio.used);
           }
         });
         break;
       case 'DollarToEuro':
         if (this.usd$) {this.usd$.unsubscribe(); }
         this.eur$ = combineLatest([this.ratio$, this.fixedRatio$]).subscribe(([live, fixed]: [number, number]) => {
-          if (this.ammountinDollar) {
+          if (this.amountinDollar) {
             const ratio: Ratio = getUsedRatio(live, fixed);
-            this.ammountinEuro = Number((this.ammountinDollar * ratio.used).toFixed(4));
+            this.amountinEuro = Number((this.amountinDollar * ratio.used).toFixed(4));
             this.isModified = false;
-            this.addToHistory('Dollar', 'Euro', this.ammountinDollar, this.ammountinEuro, ratio.live, ratio.fixed, ratio.used);
+            this.addToHistory('Dollar', 'Euro', this.amountinDollar, this.amountinEuro, ratio.live, ratio.fixed, ratio.used);
           }
         });
         break;

@@ -16,13 +16,13 @@
   </button>
 </div>
 
-<div class="flex between mt-3 p-2">
+<div class="flex between mt-3 p-2" [class.reverse]="type == 'DollarToEuro'">
   <nz-card style="width: 40%;" [class.selected]="type == 'EuroToDollar'">
-    <p>Ammount in Euro</p>
+    <p nz-typography>Amount in Euro</p>
     <nz-input-group nzPrefixIcon="euro">
-      <input type="number" nz-input *ngIf="type != 'DollarToEuro'" [(ngModel)]="ammountinEuro"
+      <input type="number" nz-input *ngIf="type != 'DollarToEuro'" [(ngModel)]="amountinEuro"
         placeholder="Please enter the amount in Euro" (change)="unsub()" />
-      <span nz-typography *ngIf="type == 'DollarToEuro'">{{ammountinEuro}}</span>
+      <span nz-typography *ngIf="type == 'DollarToEuro'">{{amountinEuro}}</span>
     </nz-input-group>
   </nz-card>
   <button nz-button nz-tooltip nzTooltipTitle='Calculate' (click)="calculate()">
@@ -30,11 +30,11 @@
     <i nz-icon nzType="calculator"></i>
   </button>
   <nz-card style="width: 40%;" [class.selected]="type == 'DollarToEuro'">
-    <p>Ammount in Dollar</p>
+    <p nz-typography>Amount in Dollar</p>
     <nz-input-group nzPrefixIcon="dollar">
-      <input type="number" nz-input *ngIf="type != 'EuroToDollar'" [(ngModel)]="ammountinDollar"
+      <input type="number" nz-input *ngIf="type != 'EuroToDollar'" [(ngModel)]="amountinDollar"
         placeholder="Please enter the amount in Dollar" (change)="unsub()" />
-      <span nz-typography *ngIf="type == 'EuroToDollar'">{{ammountinDollar}}</span>
+      <span nz-typography *ngIf="type == 'EuroToDollar'">{{amountinDollar}}</span>
     </nz-input-group>
   </nz-card>
 </div>
