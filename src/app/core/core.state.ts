@@ -20,7 +20,7 @@ export const reducers: ActionReducerMap<AppState> = {
 };
 
 export function localStorageSyncReducer(reducer: ActionReducer<any>): ActionReducer<any> {
-  return localStorageSync({keys: [], rehydrate: true})(reducer);
+  return localStorageSync({keys: ['converter'], rehydrate: true})(reducer);
 }
 
 export const metaReducers: MetaReducer<AppState>[] = [
