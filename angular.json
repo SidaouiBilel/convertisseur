@@ -6,7 +6,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "convertisseur": {
+    "rates": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/convertisseur",
+            "outputPath": "dist/rates",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -77,18 +77,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "convertisseur:build"
+            "browserTarget": "rates:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "convertisseur:build:production"
+              "browserTarget": "rates:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "convertisseur:build"
+            "browserTarget": "rates:build"
           }
         },
         "test": {
@@ -125,16 +125,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "convertisseur:serve"
+            "devServerTarget": "rates:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "convertisseur:serve:production"
+              "devServerTarget": "rates:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "convertisseur"
+  "defaultProject": "rates"
 }
