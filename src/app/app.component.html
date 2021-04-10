@@ -4,11 +4,11 @@
     <div class="flex between top">
       <div class="flex start">
         <div [class]="isCollapsed ? 'collapsed-logo' : 'logo'">
-          <a [routerLink]="['/converter']">
+          <a [routerLink]="['/rates']">
             <img class="header-icon" [class.header-icon-collapsed]="isCollapsed"
               src="../../../../assets/images/dollar.png" alt="logo">
             <h1 nz-typography *ngIf="!isCollapsed" class="text-white font-weight-light">
-              Converter
+              Forex Rates
             </h1>
           </a>
         </div>
@@ -23,9 +23,9 @@
     <!-- Sidebar -->
     <nz-sider class="scrollable-sidebar" nzCollapsible [(nzCollapsed)]="isCollapsed" nzWidth="200px" nzTheme="light">
       <ul nz-menu nzMode="inline" class="sider-menu" [nzInlineCollapsed]="isCollapsed">
-        <li nz-menu-item nzMatchRouter [routerLink]="['/converter']">
+        <li nz-menu-item nzMatchRouter [routerLink]="['/rates']">
           <i nz-icon nzType="bank"></i>
-          <span>Converter</span>
+          <span>Rates</span>
         </li>
       </ul>
     </nz-sider>

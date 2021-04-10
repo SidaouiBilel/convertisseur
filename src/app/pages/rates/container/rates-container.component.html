@@ -1,0 +1,5 @@
+<nz-tabset [(nzSelectedIndex)]="selectedIndex" nzType="editable-card" (nzAdd)="newTab()" (nzClose)="removeTab($event)">
+  <nz-tab *ngFor="let tab of (tabs$ | async)" [nzClosable]="tab.closable" [nzTitle]="tab.title">
+    <app-rate-exchange [tab]="tab" [index]="selectedIndex"></app-rate-exchange>
+  </nz-tab>
+</nz-tabset>

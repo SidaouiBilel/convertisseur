@@ -1,0 +1,12 @@
+.rate-container {
+  background-color: white;
+  padding: 12px;
+}
+
+:host p {
+  margin-bottom: 0 !important;
+}
+
+:host nz-select {
+  width: 200px;
+}

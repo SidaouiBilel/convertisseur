@@ -35,7 +35,7 @@ export class AppComponent {
   // This is used to match the name of the route with the ANT JS icons
   matchNameWithIcons(name: string): string {
     switch (name) {
-      case 'converter':
+      case 'rates':
         return 'bank';
 
       default:

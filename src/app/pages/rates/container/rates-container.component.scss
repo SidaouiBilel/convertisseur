@@ -1,0 +1,7 @@
+:host nz-tabset{
+  height: 100%;
+}
+
+:host ::ng-deep .ant-tabs-top > .ant-tabs-nav{
+  margin-bottom: 0 !important;
+}

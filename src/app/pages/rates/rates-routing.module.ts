@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
-import { ConverterComponent } from './container/converter.component';
+import { RatesContainerComponent } from './container/rates-container.component';
 
 const routes: Routes = [
-  { path: '', component: ConverterComponent },
+  { path: '', component: RatesContainerComponent },
 ];
 
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class ConverterRoutingModule { }
+export class RatesRoutingModule { }

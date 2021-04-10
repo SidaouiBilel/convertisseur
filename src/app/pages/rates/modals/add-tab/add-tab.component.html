@@ -1,0 +1,20 @@
+<form nz-form [formGroup]="myForm" (ngSubmit)="submitForm()">
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input a title!">
+      <nz-input-group nzPrefixIcon="euro">
+        <nz-select name="title" formControlName="title">
+          <nz-option *ngFor="let key of keys(currencies)" [nzValue]="key" [nzLabel]="key"></nz-option>
+        </nz-select>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+  <nz-form-item>
+    <nz-form-control nzErrorTip="Please input a base!">
+      <nz-input-group nzPrefixIcon="bank">
+        <nz-select name="base" formControlName="base">
+          <nz-option *ngFor="let key of keys(currencies)" [nzValue]="key" [nzLabel]="key"></nz-option>
+        </nz-select>
+      </nz-input-group>
+    </nz-form-control>
+  </nz-form-item>
+</form>

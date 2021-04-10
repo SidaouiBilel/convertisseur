@@ -1,0 +1,17 @@
+<div class="rate-container">
+  <h1 nz-typography class="pt-3">{{selectedCurrency || tab.title}}</h1>
+  <p nz-typography nzType="secondary">Forex Rates</p>
+
+  <nz-select *ngIf="tab.title == 'DEFAULT'" [(ngModel)]="selectedCurrency"  (ngModelChange)="getData($event)">
+    <nz-option *ngFor="let key of keys(currencies)" [nzValue]="key" [nzLabel]="key"></nz-option>
+  </nz-select>
+
+  <nz-list *ngIf="forexRates" nzBordered [nzLoading]="loading">
+    <nz-list-item *ngFor="let item of keys(forexRates?.rates)">
+      <div>
+        <span nz-typography>{{item}}</span>
+        <span nz-typography nzType="secondary">{{forexRates?.rates[item]}}</span>
+      </div>
+    </nz-list-item>
+  </nz-list>
+</div>

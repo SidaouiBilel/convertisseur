@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConversionHistoryComponent } from './conversion-history.component';
+import { RateExchangeComponent } from './rate-exchange.component';
 
-describe('ConversionHistoryComponent', () => {
-  let component: ConversionHistoryComponent;
-  let fixture: ComponentFixture<ConversionHistoryComponent>;
+describe('RateExchangeComponent', () => {
+  let component: RateExchangeComponent;
+  let fixture: ComponentFixture<RateExchangeComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConversionHistoryComponent ]
+      declarations: [ RateExchangeComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConversionHistoryComponent);
+    fixture = TestBed.createComponent(RateExchangeComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -1,20 +1,20 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConverterRatioComponent } from './converter-ratio.component';
+import { RatesContainerComponent } from './rates-container.component';
 
-describe('ConverterRatioComponent', () => {
-  let component: ConverterRatioComponent;
-  let fixture: ComponentFixture<ConverterRatioComponent>;
+describe('RatesContainerComponent', () => {
+  let component: RatesContainerComponent;
+  let fixture: ComponentFixture<RatesContainerComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ ConverterRatioComponent ]
+      declarations: [ RatesContainerComponent ]
     })
     .compileComponents();
   });
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConverterRatioComponent);
+    fixture = TestBed.createComponent(RatesContainerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
