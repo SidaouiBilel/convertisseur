@@ -1,0 +1,9 @@
+<div fxLayout="column" fxLayoutAlign="start" fxLayoutGap="10px">
+  <ng-container *ngFor="let msg of myMessages">
+    <div fxLayout="row" fxLayoutAlign="space-between center">
+      <div>{{msg?.author}}</div>
+      <div>{{msg?.text}}</div>
+      <div>{{msg?.time}}</div>
+    </div>
+  </ng-container>
+</div>

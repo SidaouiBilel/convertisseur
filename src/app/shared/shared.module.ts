@@ -68,6 +68,7 @@ import { NzTypographyModule } from 'ng-zorro-antd/typography';
 import { NzUploadModule } from 'ng-zorro-antd/upload';
 import { NzResizableModule } from 'ng-zorro-antd/resizable';
 import { ValueModifierComponent } from './value-modifier/value-modifier.component';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 const sharedModules = [
   CommonModule,
@@ -138,7 +139,8 @@ const sharedModules = [
   NzTypographyModule,
   NzUploadModule,
   NzWaveModule,
-  NzResizableModule
+  NzResizableModule,
+  FlexLayoutModule
 ];
 
 const sharedComponents = [
